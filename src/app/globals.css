@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::-webkit-scrollbar {
+	@apply w-[6px] md:block hidden;
+}
+
+body::-webkit-scrollbar-track {
+	@apply bg-[#fafafa];
+}
+
+body::-webkit-scrollbar-thumb {
+	@apply bg-secondary rounded-[10px] cursor-pointer;
+}
+
+.element-scrollbar::-webkit-scrollbar {
+	@apply w-[6px];
+}
+
+.element-scrollbar::-webkit-scrollbar-track {
+	@apply bg-[#fafafa];
+}
+
+.element-scrollbar::-webkit-scrollbar-thumb {
+	@apply bg-secondary rounded-[10px] cursor-pointer;
+}
+
+.element-no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.container {
+	@apply md:px-4 px-3 transition-all duration-200 ease-in-out my-0 mx-auto;
+}
+
+.banner-pagination {
+	@apply block sm:!bottom-0 !bottom-[-5px];
+}
+
+.banner-pagination span {
+	@apply opacity-100 w-2 h-2 rounded-full bg-[#d2d2d2] cursor-pointer transition-all duration-700 ease-in-out origin-center;
+}
+
+.banner-pagination .banner-pagination__active {
+	@apply bg-secondary w-8 h-2 rounded-md origin-center;
+}
+
+.sec-full-pagination {
+	@apply cursor-pointer;
+}
+
+.sec-full-pagination span {
+	@apply opacity-100 bg-[#d2d2d2] rounded-full w-2 h-2;
+}
+
+.sec-full-pagination .sec-full__active {
+	@apply bg-yellow-400;
+}
+
+.pagination-custom .page-item {
+	@apply cursor-pointer bg-slate-50 border-solid border-[#DFE3E8] rounded w-[35px] h-[35px] text-[#212B36] font-medium text-base leading-5 flex items-center justify-center transition-all duration-300;
+}
+
+.pagination-custom .page-item a {
+	@apply w-full h-full flex items-center justify-center;
+}
+
+.pagination-custom .page-item.disable {
+	@apply text-white bg-[#c2c2c2] border-[#dedede];
+}
+
+.pagination-custom .page-item.disable a {
+	@apply cursor-no-drop;
+}
+
+.pagination-custom .page-item.active {
+	@apply border-secondary bg-secondary text-white;
+}
+
+.loader-spin {
+	@apply w-[50px] h-[50px] animate-[loader-rotate_1s_infinite];
+}
+
+.loader-spin:before,
+.loader-spin:after {
+	@apply content-[""] block h-5 w-5 rounded-[50%];
+}
+
+.loader-spin:before {
+	@apply animate-[loader-spin-1_1s_infinite] bg-secondary shadow-[30px_0_0_#7fc0d4] mb-2.5;
+}
+
+.loader-spin:after {
+	@apply animate-[loader-spin-2_1s_infinite] bg-[#7fc0d4] shadow-[30px_0_0_#ffb31c];
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+	input {
+		font-size: 16px;
+	}
+}
